@@ -1,0 +1,82 @@
+<div class="display-wrapper">
+  <header class="top-bar">
+    <div class="party-info">
+      @if (hasParty) {
+        <div class="party-badge-group">
+          <span class="party-badge">
+            <span class="party-badge__label">Partie</span>
+            <span class="party-badge__number">{{ state.partyNumber }}</span>
+          </span>
+          @if (partyLabel) {
+            <span class="party-type">{{ partyLabel }}</span>
+          }
+        </div>
+      } @else {
+        <span class="party-waiting">En attente d'une nouvelle partie…</span>
+      }
+    </div>
+
+    <div class="top-actions">
+      @if (drawnCount > 0) {
+        <div class="drawn-counter">
+          <span class="drawn-counter__value">{{ drawnCount }}</span>
+          <span class="drawn-counter__sep">/</span>
+          <span class="drawn-counter__total">90</span>
+        </div>
+      }
+      <button class="fullscreen-btn" (click)="toggleFullscreen()" [title]="isFullscreen ? 'Quitter le plein écran' : 'Plein écran'">
+        @if (!isFullscreen) {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <polyline points="9 21 3 21 3 15"></polyline>
+            <line x1="21" y1="3" x2="14" y2="10"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+          </svg>
+        } @else {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="8 3 3 3 3 8"></polyline>
+            <polyline points="21 8 21 3 16 3"></polyline>
+            <polyline points="3 16 3 21 8 21"></polyline>
+            <polyline points="16 21 21 21 21 16"></polyline>
+          </svg>
+        }
+      </button>
+    </div>
+  </header>
+
+  <!-- Main number display -->
+  <main class="main-display">
+    @if (state.lastNumber !== null) {
+      <div class="number-stage" [class.animating]="isAnimating">
+        <div class="number-ring outer"></div>
+        <div class="number-ring inner"></div>
+        <div class="number-card" [ngClass]="getNumberDecade(state.lastNumber)">
+          <span class="current-number">{{ state.lastNumber }}</span>
+        </div>
+        <span class="number-sublabel">Dernier tirage</span>
+      </div>
+    } @else {
+      <div class="placeholder">
+        <div class="placeholder-orb"></div>
+        <p>Aucun numéro tiré</p>
+        <p class="placeholder-hint">Sélectionnez un numéro dans la grille</p>
+      </div>
+    }
+  </main>
+
+  <!-- History -->
+  <footer class="history" [class.visible]="drawnCount > 0">
+    <div class="history-header">
+      <span class="history-title">Historique des tirages</span>
+    </div>
+    <div class="history-numbers">
+      @for (num of state.selectedNumbers; track num) {
+        <span class="hist-chip" [ngClass]="getNumberDecade(num)" [class.hist-chip--latest]="num === state.lastNumber">
+          {{ num }}
+        </span>
+      }
+    </div>
+  </footer>
+
+</div>
+

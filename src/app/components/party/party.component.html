@@ -1,0 +1,27 @@
+<nav class="party-nav">
+  <button class="party-btn" (click)="newParty()">
+    Nouvelle partie
+    @if (counter > 0) {
+      <span class="counter">{{ counter }}</span>
+    }
+  </button>
+  <button 
+    class="party-btn" 
+    [class.active]="partyType === 'QUINE SIMPLE'"
+    (click)="setPartyType('QUINE SIMPLE')">
+    Quine simple
+  </button>
+  <button 
+    class="party-btn" 
+    [class.active]="partyType === 'DOUBLE QUINE'"
+    (click)="setPartyType('DOUBLE QUINE')">
+    Double Quine
+  </button>
+  <button 
+    class="party-btn" 
+    [class.active]="partyType === 'CARTON PLEIN'"
+    (click)="setPartyType('CARTON PLEIN')">
+    Carton plein
+  </button>
+  <a class="party-btn" href="/display" target="_blank">Affichage</a>
+</nav>

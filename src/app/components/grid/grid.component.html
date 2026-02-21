@@ -1,0 +1,25 @@
+<div class="loto-container">
+  <div class="loto-grid">
+    <div 
+      *ngFor="let num of numbers"
+      class="loto-cell"
+      [class.selected]="isSelected(num)"
+      (click)="toggleNumber(num)">
+      {{ num }}
+    </div>
+  </div>
+  
+  <div class="selected-numbers">
+    @if (partyType) {
+      <h2>{{ partyType }}</h2>
+    }
+    <h3>Numéros tirés :</h3>
+    <div class="numbers-list">
+      <span 
+        *ngFor="let num of getSelectedNumbersSorted()"
+        class="selected-badge">
+        {{ num }}
+      </span>
+    </div>
+  </div>
+</div>

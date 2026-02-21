@@ -1,0 +1,6 @@
+<div id="party_select">
+  <app-party (newPartyEvent)="onNewParty($event)" (partyTypeChange)="onPartyTypeChange($event)"></app-party>
+</div>
+<div id="grid">
+  <app-grid [partyType]="currentPartyType" (numbersChange)="onNumbersChange($event)"></app-grid>
+</div>
