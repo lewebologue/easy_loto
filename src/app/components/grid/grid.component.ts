@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { LotoStateService } from '../../services/loto-state.service';
 
 @Component({
     selector: 'app-grid',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './grid.component.html',
     styleUrl: './grid.component.scss'
 })

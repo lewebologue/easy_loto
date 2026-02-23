@@ -1,13 +1,14 @@
 <div class="loto-container">
   <div class="loto-grid">
-    <div
-      *ngFor="let num of numbers"
-      class="loto-cell"
-      [class.selected]="isSelected(num)"
-      (click)="toggleNumber(num)"
-    >
-      {{ num }}
-    </div>
+    @for (num of numbers; track num) {
+      <div
+        class="loto-cell"
+        [class.selected]="isSelected(num)"
+        (click)="toggleNumber(num)"
+        >
+        {{ num }}
+      </div>
+    }
   </div>
 
   <div class="selected-numbers">
@@ -22,15 +23,18 @@
     }
     <h3>Numéros tirés :</h3>
     <div class="numbers-by-dozen">
-      <div
-        *ngFor="let dozen of getSelectedNumbersByDozen()"
-        class="dozen-column"
-        [class.has-numbers]="dozen.length > 0"
-      >
-        <span *ngFor="let num of dozen" class="selected-badge">
-          {{ num }}
-        </span>
-      </div>
+      @for (dozen of getSelectedNumbersByDozen(); track dozen) {
+        <div
+          class="dozen-column"
+          [class.has-numbers]="dozen.length > 0"
+          >
+          @for (num of dozen; track num) {
+            <span class="selected-badge">
+              {{ num }}
+            </span>
+          }
+        </div>
+      }
     </div>
   </div>
 </div>

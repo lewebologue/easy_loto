@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { PartyComponent } from '../../components/party/party.component';
 import { GridComponent } from '../../components/grid/grid.component';
 import { LotoStateService } from '../../services/loto-state.service';
@@ -7,7 +7,7 @@ import { LotoStateService } from '../../services/loto-state.service';
 
 @Component({
     selector: 'app-home',
-    imports: [CommonModule, PartyComponent, GridComponent],
+    imports: [PartyComponent, GridComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
 })
