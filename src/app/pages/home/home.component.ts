@@ -6,11 +6,10 @@ import { LotoStateService } from '../../services/loto-state.service';
 
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, PartyComponent, GridComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    imports: [CommonModule, PartyComponent, GridComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   currentPartyType: string = '';

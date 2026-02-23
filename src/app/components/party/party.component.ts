@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-party',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './party.component.html',
-  styleUrl: './party.component.scss'
+    selector: 'app-party',
+    imports: [CommonModule],
+    templateUrl: './party.component.html',
+    styleUrl: './party.component.scss'
 })
 export class PartyComponent {
   counter: number = 0;

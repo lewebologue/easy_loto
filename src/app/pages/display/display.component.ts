@@ -4,11 +4,10 @@ import { Subscription } from 'rxjs';
 import { LotoStateService, LotoState } from '../../services/loto-state.service';
 
 @Component({
-  selector: 'app-display',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './display.component.html',
-  styleUrl: './display.component.scss'
+    selector: 'app-display',
+    imports: [CommonModule],
+    templateUrl: './display.component.html',
+    styleUrl: './display.component.scss'
 })
 export class DisplayComponent implements OnInit, OnDestroy {
   state: LotoState = {

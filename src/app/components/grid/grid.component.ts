@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LotoStateService } from '../../services/loto-state.service';
 
 @Component({
-  selector: 'app-grid',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './grid.component.html',
-  styleUrl: './grid.component.scss'
+    selector: 'app-grid',
+    imports: [CommonModule],
+    templateUrl: './grid.component.html',
+    styleUrl: './grid.component.scss'
 })
 export class GridComponent implements OnInit {
   @Input() partyType: string = '';
