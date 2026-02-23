@@ -50,7 +50,7 @@
       <div class="number-stage" [class.animating]="isAnimating">
         <div class="number-ring outer"></div>
         <div class="number-ring inner"></div>
-        <div class="number-card" [ngClass]="getNumberDecade(state.lastNumber)">
+        <div class="number-card" [class]="getNumberDecade(state.lastNumber)">
           <span class="current-number">{{ state.lastNumber }}</span>
         </div>
         <span class="number-sublabel">Dernier tirage</span>
@@ -71,7 +71,7 @@
     </div>
     <div class="history-numbers">
       @for (num of state.selectedNumbers; track num) {
-        <span class="hist-chip" [ngClass]="getNumberDecade(num)" [class.hist-chip--latest]="num === state.lastNumber">
+        <span class="hist-chip" [class]="getNumberDecade(num)" [class.hist-chip--latest]="num === state.lastNumber">
           {{ num }}
         </span>
       }
