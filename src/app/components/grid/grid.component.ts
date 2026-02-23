@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { LotoStateService } from '../../services/loto-state.service';
 
@@ -6,7 +6,8 @@ import { LotoStateService } from '../../services/loto-state.service';
     selector: 'app-grid',
     imports: [],
     templateUrl: './grid.component.html',
-    styleUrl: './grid.component.scss'
+    styleUrl: './grid.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GridComponent implements OnInit {
   @Input() partyType: string = '';

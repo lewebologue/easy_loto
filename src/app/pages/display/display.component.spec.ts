@@ -35,7 +35,7 @@ describe('DisplayComponent', () => {
     expect(component.isAnimating).toBeFalsy();
     
     // Flush all pending timers to execute the setTimeout(fn, 10)
-    // In Angular 19, flush() handles zone scheduling properly for hybrid mode
+    // In Angular 21, flush() handles zone scheduling properly with zoneless change detection
     flush();
     
     // After flush, the setTimeout callback should have executed

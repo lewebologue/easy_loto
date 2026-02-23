@@ -23,7 +23,7 @@
     }
     <h3>Numéros tirés :</h3>
     <div class="numbers-by-dozen">
-      @for (dozen of getSelectedNumbersByDozen(); track dozen) {
+      @for (dozen of getSelectedNumbersByDozen(); track $index) {
         <div
           class="dozen-column"
           [class.has-numbers]="dozen.length > 0"

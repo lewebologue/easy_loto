@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles.scss"],
+  "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\r\n\r\n@font-face {\r\n  font-family: 'Roboto';\r\n  src: url('/assets/fonts/roboto-400.woff2') format('woff2');\r\n  font-weight: 400;\r\n  font-style: normal;\r\n  font-display: swap;\r\n}\r\n\r\n@font-face {\r\n  font-family: 'Roboto';\r\n  src: url('/assets/fonts/roboto-500.woff2') format('woff2');\r\n  font-weight: 500;\r\n  font-style: normal;\r\n  font-display: swap;\r\n}\r\n\r\n@font-face {\r\n  font-family: 'Roboto';\r\n  src: url('/assets/fonts/roboto-700.woff2') format('woff2');\r\n  font-weight: 700;\r\n  font-style: normal;\r\n  font-display: swap;\r\n}\r\n\r\n@font-face {\r\n  font-family: 'Roboto';\r\n  src: url('/assets/fonts/roboto-900.woff2') format('woff2');\r\n  font-weight: 900;\r\n  font-style: normal;\r\n  font-display: swap;\r\n}\r\n\r\n* {\r\n  font-family: 'Roboto', sans-serif;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Roboto', sans-serif;\r\n}\r\n"],
+  "mappings": ";AAEA;AACE,eAAA;AACA,OAAA,oCAAA,OAAA;AACA,eAAA;AACA,cAAA;AACA,gBAAA;;AAGF;AACE,eAAA;AACA,OAAA,oCAAA,OAAA;AACA,eAAA;AACA,cAAA;AACA,gBAAA;;AAGF;AACE,eAAA;AACA,OAAA,oCAAA,OAAA;AACA,eAAA;AACA,cAAA;AACA,gBAAA;;AAGF;AACE,eAAA;AACA,OAAA,oCAAA,OAAA;AACA,eAAA;AACA,cAAA;AACA,gBAAA;;AAGF;AACE,eAAA,QAAA,EAAA;;AAGF;AACE,UAAA;AACA,WAAA;AACA,eAAA,QAAA,EAAA;;",
+  "names": []
+}

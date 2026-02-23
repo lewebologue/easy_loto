@@ -1,11 +1,12 @@
 
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-party',
     imports: [],
     templateUrl: './party.component.html',
-    styleUrl: './party.component.scss'
+    styleUrl: './party.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PartyComponent {
   counter: number = 0;
