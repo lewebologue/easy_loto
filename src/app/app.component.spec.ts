@@ -10,6 +10,7 @@ describe('AppComponent', () => {
 
   it('should create the app', async () => {
     const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     await fixture.whenStable();
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
@@ -17,6 +18,7 @@ describe('AppComponent', () => {
 
   it(`should have the 'easy_loto' title`, async () => {
     const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     await fixture.whenStable();
     const app = fixture.componentInstance;
     expect(app.title).toEqual('easy_loto');
