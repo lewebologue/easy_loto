@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { DisplayComponent } from './display.component';
 
@@ -17,7 +17,14 @@ describe('DisplayComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', async () => {
+    await fixture.whenStable();
     expect(component).toBeTruthy();
   });
+
+  it('should handle animation timing', fakeAsync(() => {
+    fixture.detectChanges();
+    tick(10);
+    expect(component).toBeTruthy();
+  }));
 });

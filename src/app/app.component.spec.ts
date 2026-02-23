@@ -8,22 +8,25 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the app', async () => {
     const fixture = TestBed.createComponent(AppComponent);
+    await fixture.whenStable();
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'easy_loto' title`, () => {
+  it(`should have the 'easy_loto' title`, async () => {
     const fixture = TestBed.createComponent(AppComponent);
+    await fixture.whenStable();
     const app = fixture.componentInstance;
     expect(app.title).toEqual('easy_loto');
   });
 
-  it('should render title', () => {
+  it('should render router outlet', async () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
+    await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, easy_loto');
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });

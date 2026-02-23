@@ -17,7 +17,13 @@ describe('GridComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', async () => {
+    await fixture.whenStable();
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize with 90 numbers', async () => {
+    await fixture.whenStable();
+    expect(component.numbers.length).toBe(90);
   });
 });

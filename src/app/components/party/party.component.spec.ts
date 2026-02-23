@@ -17,7 +17,15 @@ describe('PartyComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', async () => {
+    await fixture.whenStable();
     expect(component).toBeTruthy();
+  });
+
+  it('should emit newPartyEvent when newParty is called', async () => {
+    await fixture.whenStable();
+    spyOn(component.newPartyEvent, 'emit');
+    component.newParty();
+    expect(component.newPartyEvent.emit).toHaveBeenCalledWith(1);
   });
 });
