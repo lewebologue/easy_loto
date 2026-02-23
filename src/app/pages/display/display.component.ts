@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { LotoStateService, LotoState } from '../../services/loto-state.service';
 
 @Component({
     selector: 'app-display',
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './display.component.html',
     styleUrl: './display.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
